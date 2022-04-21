@@ -39,7 +39,7 @@ case "estado":
                 if($stmt->errno == 0){
                     $text= "El registro agregó exitosamente!";
                     $id = $stmt->insert_id;
-                    $html = "<tr id=\"item-$id\"><td>$id</td><td>$item</td><td><label><input id=\"input-$id\" type=\"checkbox\" checked onclick=\"estado('$id')\" /><span></span></label></td></tr>";
+                    $html = "<tr id=\"item-$id\"><td>$id</td><td>$item</td><td><label><input id=\"input-$id\" type=\"checkbox\" onclick=\"estado('$id')\" /><span></span></label></td></tr>";
                 }else{
                     $text = "No se pudo eliminar el registro";
                 }

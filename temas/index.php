@@ -44,18 +44,18 @@ global $urlweb;
           <tr>
               <th>Identificador</th>
               <th>Nombre</th>
-              <th>Estado</th>
+              <th>Done</th>
           </tr>
         </thead>
 
         <tbody id="tbody">
           <?php
-    $strsql="SELECT id, nombre, estado FROM to_do WHERE activo=1 ORDER BY estado DESC";
+    $strsql="SELECT id, nombre, estado, fecha_creacion FROM to_do WHERE activo=1 ORDER BY estado DESC";
     if($stmt = $mysqli->prepare($strsql)){
         $stmt->execute();
         $stmt->store_result();
         if($stmt->num_rows>0){
-            $stmt->bind_result($id, $nombre, $estado);
+            $stmt->bind_result($id, $nombre, $estado, $fecha_creacion);
             while($stmt->fetch()){
                 ?>
         <tr id="item-<?php echo $id ?>">
@@ -82,7 +82,7 @@ global $urlweb;
         var miCheckbox = document.getElementById("input-" + id);
         if (miCheckbox.checked) {
             var estado = 1;
-         
+
         } else {
             var estado = 0;
         }
@@ -106,24 +106,32 @@ global $urlweb;
 
 function send() {
     var item = document.getElementById("txt_item").value;
-    var url = '<?php echo $urlweb?>api/to_do.php?accion=agregar';
-    var data = {
-        item: item
-    };
-    fetch(url, {
-            method: 'POST',
-            body: JSON.stringify(data)
-        }).then(res => res.json())
-        .then(response => {
-            M.toast({
-                html: response.text
-            });
-            document.getElementById("tbody").innerHTML += response.html;
+    if (item != "") {
+        var url = '<?php echo $urlweb?>api/to_do.php?accion=agregar';
+        var data = {
+            item: item
+        };
+        fetch(url, {
+                method: 'POST',
+                body: JSON.stringify(data)
+            }).then(res => res.json())
+            .then(response => {
+                M.toast({
+                    html: response.text
+                });
+                document.getElementById("tbody").innerHTML += response.html;
+                document.getElementById("txt_item").value = "";
+            })
+            .catch(error => M.toast({
+                html: error.text
+            }))
+    } else {
+        M.toast({
+            html: "No puede dejar campos vacios"
         })
-        .catch(error => M.toast({
-            html: error.text
-        }))
-} 
+    }
+}
+
 function eliminar_todo() {
     var url = '<?php echo $urlweb?>api/to_do.php?accion=eliminar_todo';
     fetch(url, {
@@ -138,14 +146,15 @@ function eliminar_todo() {
         .catch(error => M.toast({
             html: error.text
         }))
-} 
-function eliminar_seleccionados(){
+}
+
+function eliminar_seleccionados() {
     var checks = document.querySelectorAll('.checkbox');
     var id_array = [];
-    checks.forEach((e)=>{
-        if(e.checked==true){
-           id_array.push(e.id.slice(6));
-           const element = document.getElementById("item-"+e.id.slice(6));
+    checks.forEach((e) => {
+        if (e.checked == true) {
+            id_array.push(e.id.slice(6));
+            const element = document.getElementById("item-" + e.id.slice(6));
             element.remove();
         }
     });
@@ -163,7 +172,7 @@ function eliminar_seleccionados(){
         .catch(error => M.toast({
             html: error.text
         }))
-}
+} 
 </script>
     </body>
   </html>
