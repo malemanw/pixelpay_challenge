@@ -14,32 +14,34 @@ global $urlweb;
       <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     </head>
     <body>
-    <div class="container center z-depth-5 grey lighten-2">
+    <div id="main" class="container center z-depth-5 grey lighten-4">
+        <img width="200px" height="45px" class="responsive-img" src="https://www.pixel.hn/themes/pixelpay-theme/assets/images/_commun/logo.svg" alt=""><br>
         <img width="500px" class="responsive-img" src="https://img.mailinblue.com/3020056/images/rnb/original/61a6a137a8e459762d30abb5.png" alt="">
-            <h2>Challenge: Lista de quehaceres </h2>
+            <h2 class="blue-text flow-text"><b>Challenge: Lista de quehaceres</b></h2>
+            <p class="grey-text text-darken-2">Desarrolla una aplicación web donde sea capaz de agregar ítems en una lista de quehaceres y poder completar ítems de la lista.</p>
 <div id="controls">
 <div class="row">
    <div class="col s12 l4 offset-l3">
          <div class="input-field">
-            <i class="material-icons prefix">add_circle</i>
+            <i class="material-icons prefix">format_list_bulleted</i>
             <input id="txt_item" type="text" class="validate">
             <label for="txt_item">Ingrese su item</label>
       </div>
    </div>
    <div class="col s12 l4">
-        <a class="btn btn-large" href="javascript:send()"><i class="material-icons left">send</i>Agregar</a>
+        <a class="btn btn-large rounded  blue darken-2" href="javascript:send()"><i class="material-icons left">send</i>Agregar</a>
     </div>
 </div>
 </div>
-    <div id="controls-2">
+    <div class="" id="controls-2">
         <div class="row">
             <div class="col l12 s12">
-            <a class="btn red" href="javascript:eliminar_todo()"><i class="material-icons left">content_cut</i>Eliminar Todo</a>
-            <a class="btn green" href="javascript:eliminar_seleccionados()"><i class="material-icons left">format_line_spacing</i>Elimiar Seleccionados</a>
+            <a class="btn red rounded btn-large" href="javascript:eliminar_todo()"><i class="material-icons left">content_cut</i>Eliminar Todo</a>
+            <a class="btn green rounded btn-large" href="javascript:eliminar_seleccionados()"><i class="material-icons left">format_line_spacing</i>Elimiar Seleccionados</a>
             </div>
         </div>
     </div>
-            <table id="tbldata" class="centered">
+            <table id="tbldata" class="centered highlight responsive-table">
         <thead>
           <tr>
               <th>Identificador</th>
@@ -74,6 +76,9 @@ global $urlweb;
     ?>
         </tbody>
       </table>
+    </div>
+    <div>
+        <p class="blue-text">Powered by: Marco Aleman Watters.</p>
     </div>
     <!--JavaScript at end of body for optimized loading-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
