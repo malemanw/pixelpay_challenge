@@ -111,9 +111,11 @@ global $urlweb;
             .catch(error => M.toast({
                 html: error.text
             }))
-            .then(response => M.toast({
-                html: response.text
-            }));
+            .then(response => {
+                M.toast({
+                    html: response.text
+                });
+            });
     }
 
 function send() {
