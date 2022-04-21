@@ -1,5 +1,6 @@
 #main{
     padding: 50px;
+    margin-top: 10px;
 }
 
 .flow-text {
@@ -10,4 +11,9 @@
     border-radius: 25px;
     border: 2px;
     box-shadow: 0 8px 15px 0 rgb(66 117 242 / 25%);
+}
+#barra_superior{
+    width: 100%;
+    min-height: 3rem;
+    background-color: white;
 }

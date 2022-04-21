@@ -12,8 +12,15 @@ global $urlweb;
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
       <link rel="stylesheet" href="<?php echo $urlweb?>temas/css/estilo.css">
       <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+      <meta property="og:image" content="https://www.pixel.hn/themes/pixelpay-theme/assets/images/_commun/og-image.png" />
+      <link rel="shortcut icon" href="https://www.pixel.hn/themes/pixelpay-theme/assets/images/_commun/favicon.ico" />
+      <link rel="icon" type="image/png" href="https://www.pixel.hn/themes/pixelpay-theme/assets/images/_commun/favicon.png" />  
     </head>
     <body>
+        <div id="barra_superior" class="z-depth-1">
+        <img width="200px" height="45px" class="responsive-img" src="https://www.pixel.hn/themes/pixelpay-theme/assets/images/_commun/logo.svg" alt="">
+        <span class="blue-text">Suite de soluciones de pago</span>
+        </div>
     <div id="main" class="container center z-depth-5 grey lighten-4">
         <img width="200px" height="45px" class="responsive-img" src="https://www.pixel.hn/themes/pixelpay-theme/assets/images/_commun/logo.svg" alt=""><br>
         <img width="500px" class="responsive-img" src="https://img.mailinblue.com/3020056/images/rnb/original/61a6a137a8e459762d30abb5.png" alt="">
