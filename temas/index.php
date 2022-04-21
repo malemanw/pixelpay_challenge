@@ -44,11 +44,11 @@ global $urlweb;
         <div class="row">
             <div class="col l12 s12">
             <a class="btn red rounded btn-large" href="javascript:eliminar_todo()"><i class="material-icons left">content_cut</i>Eliminar Todo</a>
-            <a class="btn green rounded btn-large" href="javascript:eliminar_seleccionados()"><i class="material-icons left">format_line_spacing</i>Elimiar Seleccionados</a>
+            <a class="btn green rounded btn-large" href="javascript:eliminar_seleccionados()"><i class="material-icons left">format_line_spacing</i>Eliminar Seleccionados</a>
             </div>
         </div>
     </div>
-            <table id="tbldata" class="centered highlight responsive-table">
+            <table id="tbldata" class="centered highlight">
         <thead>
           <tr>
               <th>Identificador</th>

@@ -1,3 +1,14 @@
+@media only screen and (max-width: 425px) {
+    .rounded{
+        font-size: 12px !important;
+        margin: 2px !important;
+    }
+  }
+  @media only screen and (max-width: 375px) {
+    .rounded{
+        font-size: 9px !important;
+    }
+  }
 #main{
     padding: 50px;
     margin-top: 10px;
